@@ -1,0 +1,17 @@
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\OnReport.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\OnReport.pdb
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\obj\Debug\OnReport.csprojResolveAssemblyReference.cache
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\obj\Debug\OnReport.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\obj\Debug\OnReport.pdb
