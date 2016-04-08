@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WebForms;
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace OnReport
@@ -32,12 +33,17 @@ namespace OnReport
         /// <summary>
         /// Ouput format of the report.
         /// </summary>
-        public OnOutputFormat OutputFormat { get; set; }
+        public OnReportOutputFormat OutputFormat { get; set; }
 
         /// <summary>
         /// Size and margins of the report.
         /// </summary>
         public OnReportSize ReportSize { get; set; }
+
+        /// <summary>
+        /// Report's parameters.
+        /// </summary>
+        public IList<OnReportParameter> Parameters { get; set; }
 
         /// <summary>
         /// Method that renders the report.
@@ -78,6 +84,20 @@ namespace OnReport
                 {
                     relat.ReportPath = ReportPath;
 
+                    //Parameters
+                    if (Parameters != null)
+                    {
+                        var parameters = new List<ReportParameter>();
+
+                        foreach (var p in Parameters)
+                        {
+                            parameters.Add(new ReportParameter(p.Name, p.Value));
+                        }
+
+                        relat.SetParameters(parameters.ToArray());
+                    }
+
+                    //Data
                     var ds = new ReportDataSource
                     {
                         Name = DataSource,
@@ -121,7 +141,7 @@ namespace OnReport
                     {
                         Bytes = bytes,
                         MimeType = mimeType,
-                        FileName = $"{OutputFileName}.{ fileNameExtension}"
+                        FileName = $"{OutputFileName}.{fileNameExtension}"
                     };
 
                     return orr;
@@ -129,7 +149,7 @@ namespace OnReport
             }
             catch (Exception)
             {
-                throw;
+                throw new OnReportRenderException("Could not render the report.");
             }
         }
     }
