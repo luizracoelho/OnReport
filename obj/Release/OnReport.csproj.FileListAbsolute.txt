@@ -19,6 +19,6 @@ C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Release\OnRepor
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Release\Microsoft.ReportViewer.Common.dll
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
-C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\obj\Release\OnReport.csprojResolveAssemblyReference.cache
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\obj\Release\OnReport.dll
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\obj\Release\OnReport.pdb
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\obj\Release\OnReport.csprojResolveAssemblyReference.cache

@@ -15,3 +15,10 @@ C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\bin\Debug\
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\obj\Debug\OnReport.csprojResolveAssemblyReference.cache
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\obj\Debug\OnReport.dll
 C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\OnReport\obj\Debug\OnReport.pdb
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Debug\OnReport.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Debug\OnReport.pdb
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\bin\Debug\Microsoft.ReportViewer.WebForms.xml
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\obj\Debug\OnReport.dll
+C:\Users\LuizRicardo\Dropbox\Onsoft\Projetos\Onsoft\OnReport\obj\Debug\OnReport.pdb

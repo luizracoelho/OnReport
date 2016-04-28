@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OnReport
@@ -16,14 +17,9 @@ namespace OnReport
         public string ReportPath { get; set; }
 
         /// <summary>
-        /// Name of data source in 'rdlc' file.
+        /// Reports's DataSource
         /// </summary>
-        public string DataSource { get; set; }
-
-        /// <summary>
-        /// Data of the report.
-        /// </summary>
-        public object ReportData { get; set; }
+        public OnReportDataSource DataSource { get; set; }
 
         /// <summary>
         /// Name of the file after output.
@@ -46,6 +42,11 @@ namespace OnReport
         public IList<OnReportParameter> Parameters { get; set; }
 
         /// <summary>
+        /// Report's SubReport Render
+        /// </summary>
+        public SubreportProcessingEventHandler SubReportProcessing { get; set; }
+
+        /// <summary>
         /// Method that renders the report.
         /// </summary>
         /// <returns>OnReportResult</returns>
@@ -54,7 +55,10 @@ namespace OnReport
             try
             {
                 //Validations
-                if (string.IsNullOrEmpty(ReportPath) || string.IsNullOrEmpty(DataSource) || ReportData == null)
+                if (string.IsNullOrEmpty(ReportPath))
+                    throw new ArgumentNullException();
+
+                if (string.IsNullOrEmpty(DataSource.Name) || DataSource.Value == null)
                     throw new ArgumentNullException();
 
                 OutputFileName = string.IsNullOrEmpty(OutputFileName) ? "Report" : OutputFileName;
@@ -98,13 +102,14 @@ namespace OnReport
                     }
 
                     //Data
-                    var ds = new ReportDataSource
+                    relat.DataSources.Add(new ReportDataSource
                     {
-                        Name = DataSource,
-                        Value = ReportData
-                    };
+                        Name = DataSource.Name,
+                        Value = DataSource.Value
+                    });
 
-                    relat.DataSources.Add(ds);
+                    //Subreport
+                    relat.SubreportProcessing += SubReportProcessing;
 
                     var reportType = OutputFormat.ToString();
                     string mimeType;
@@ -147,9 +152,9 @@ namespace OnReport
                     return orr;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new OnReportRenderException("Could not render the report.");
+                throw new OnReportRenderException(ex.InnerException.Message);
             }
         }
     }

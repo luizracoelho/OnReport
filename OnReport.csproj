@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OnReportConfig.cs" />
+    <Compile Include="OnReportDataSource.cs" />
     <Compile Include="OnReportOutputFormat.cs" />
     <Compile Include="OnReportParameter.cs" />
     <Compile Include="OnReportRenderException.cs" />
