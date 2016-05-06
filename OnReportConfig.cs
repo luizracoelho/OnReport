@@ -37,6 +37,11 @@ namespace OnReport
         public OnReportSize ReportSize { get; set; }
 
         /// <summary>
+        /// Enable or disabled external images.
+        /// </summary>
+        public bool EnableExternalImages { get; set; }
+
+        /// <summary>
         /// Report's parameters.
         /// </summary>
         public IList<OnReportParameter> Parameters { get; set; }
@@ -87,6 +92,9 @@ namespace OnReport
                 using (var relat = new LocalReport())
                 {
                     relat.ReportPath = ReportPath;
+
+                    //ExternalImages
+                    relat.EnableExternalImages = EnableExternalImages;
 
                     //Parameters
                     if (Parameters != null)
