@@ -89,80 +89,80 @@ namespace OnReport
                 }
 
                 //Method Execution
-                using (var relat = new LocalReport())
+                var relat = new LocalReport()
                 {
-                    relat.ReportPath = ReportPath;
+                    ReportPath = ReportPath,
 
                     //ExternalImages
-                    relat.EnableExternalImages = EnableExternalImages;
+                    EnableExternalImages = EnableExternalImages
+                };
 
-                    //Parameters
-                    if (Parameters != null)
+                //Parameters
+                if (Parameters != null)
+                {
+                    var parameters = new List<ReportParameter>();
+
+                    foreach (var p in Parameters)
                     {
-                        var parameters = new List<ReportParameter>();
-
-                        foreach (var p in Parameters)
-                        {
-                            parameters.Add(new ReportParameter(p.Name, p.Value));
-                        }
-
-                        relat.SetParameters(parameters.ToArray());
+                        parameters.Add(new ReportParameter(p.Name, p.Value));
                     }
 
-                    //Data
-                    relat.DataSources.Add(new ReportDataSource
-                    {
-                        Name = DataSource.Name,
-                        Value = DataSource.Value
-                    });
-
-                    //Subreport
-                    relat.SubreportProcessing += SubReportProcessing;
-
-                    var reportType = OutputFormat.ToString();
-                    string mimeType;
-                    string encoding;
-                    string fileNameExtension;
-
-                    var sb = new StringBuilder();
-
-                    sb.Append("<DeviceInfo>");
-                    sb.Append($"<OutputFormat>{reportType}</OutputFormat>");
-                    sb.Append($"<PageWidth>{ReportSize.PageWidth}</PageWidth>");
-                    sb.Append($"<PageHeight>{ReportSize.PageHeight}</PageHeight>");
-                    sb.Append($"<MarginTop>{ReportSize.MarginTop}</MarginTop>");
-                    sb.Append($"<MarginBottom>{ReportSize.MarginBottom}</MarginBottom>");
-                    sb.Append($"<MarginLeft>{ReportSize.MarginLeft}</MarginLeft>");
-                    sb.Append($"<MarginRight>{ReportSize.MarginRight}</MarginRight>");
-                    sb.Append("</DeviceInfo>");
-
-                    var deviceInfo = sb.ToString();
-                    Warning[] warnings;
-                    string[] streams;
-                    byte[] bytes;
-
-                    bytes = relat.Render(
-                        reportType,
-                        deviceInfo,
-                        out mimeType,
-                        out encoding,
-                        out fileNameExtension,
-                        out streams,
-                        out warnings);
-
-                    var orr = new OnReportResult
-                    {
-                        Bytes = bytes,
-                        MimeType = mimeType,
-                        FileName = $"{OutputFileName}.{fileNameExtension}"
-                    };
-
-                    return orr;
+                    relat.SetParameters(parameters.ToArray());
                 }
+
+                //Data
+                relat.DataSources.Add(new ReportDataSource
+                {
+                    Name = DataSource.Name,
+                    Value = DataSource.Value
+                });
+
+                //Subreport
+                relat.SubreportProcessing += SubReportProcessing;
+
+                var reportType = OutputFormat.ToString();
+                string mimeType;
+                string encoding;
+                string fileNameExtension;
+
+                var sb = new StringBuilder();
+
+                sb.Append("<DeviceInfo>");
+                sb.Append($"<OutputFormat>{reportType}</OutputFormat>");
+                sb.Append($"<PageWidth>{ReportSize.PageWidth}</PageWidth>");
+                sb.Append($"<PageHeight>{ReportSize.PageHeight}</PageHeight>");
+                sb.Append($"<MarginTop>{ReportSize.MarginTop}</MarginTop>");
+                sb.Append($"<MarginBottom>{ReportSize.MarginBottom}</MarginBottom>");
+                sb.Append($"<MarginLeft>{ReportSize.MarginLeft}</MarginLeft>");
+                sb.Append($"<MarginRight>{ReportSize.MarginRight}</MarginRight>");
+                sb.Append("</DeviceInfo>");
+
+                var deviceInfo = sb.ToString();
+                Warning[] warnings;
+                string[] streams;
+                byte[] bytes;
+
+                bytes = relat.Render(
+                    reportType,
+                    deviceInfo,
+                    out mimeType,
+                    out encoding,
+                    out fileNameExtension,
+                    out streams,
+                    out warnings);
+
+                var orr = new OnReportResult
+                {
+                    Bytes = bytes,
+                    MimeType = mimeType,
+                    FileName = $"{OutputFileName}.{fileNameExtension}"
+                };
+
+                return orr;
             }
             catch (Exception ex)
             {
-                throw new OnReportRenderException(ex.InnerException.Message);
+                throw new OnReportRenderException(ex.InnerException?.InnerException?.Message);
             }
         }
     }
